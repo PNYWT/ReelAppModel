@@ -25,6 +25,7 @@ class PlayerViewCell: UICollectionViewCell {
                 let player = AVPlayer(url: videoURL)
                 playerViewController = AVPlayerViewController()
                 if let viewPlayer = playerViewController{
+                    viewPlayer.showsPlaybackControls = false
                     viewPlayer.view.frame = contentView.bounds
                     viewPlayer.player = player
                     contentView.addSubview(viewPlayer.view)
