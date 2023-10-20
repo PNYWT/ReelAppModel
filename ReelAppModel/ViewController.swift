@@ -87,5 +87,23 @@ extension ViewController:UICollectionViewDelegate, UICollectionViewDataSource{
             cell.playerPlay()
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let cell:PlayerViewCell = self.cltvVideo.cellForItem(at: indexPath) as? PlayerViewCell{
+            cell.didselectToPlayorStop()
+        }
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        for cell in cltvVideo.visibleCells {
+            (cell as? PlayerViewCell)?.stopPlayer()
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        for cell in cltvVideo.visibleCells {
+            (cell as? PlayerViewCell)?.playerPlay()
+        }
+    }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D7777E3D2AE278630083B314 /* VideoCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7777E3C2AE278630083B314 /* VideoCustom.swift */; };
 		D7865AD02AC19FE10035543B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7865ACF2AC19FE10035543B /* AppDelegate.swift */; };
 		D7865AD22AC19FE10035543B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7865AD12AC19FE10035543B /* SceneDelegate.swift */; };
 		D7865AD92AC19FE20035543B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7865AD82AC19FE20035543B /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D7777E3C2AE278630083B314 /* VideoCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCustom.swift; sourceTree = "<group>"; };
 		D7865ACC2AC19FE10035543B /* ReelAppModel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReelAppModel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7865ACF2AC19FE10035543B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7865AD12AC19FE10035543B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D7777E3B2AE278550083B314 /* PlayerCell */ = {
+			isa = PBXGroup;
+			children = (
+				D7865AE52AC19FFC0035543B /* PlayerViewCell.swift */,
+				D7865AE62AC19FFC0035543B /* PlayerViewCell.xib */,
+				D7777E3C2AE278630083B314 /* VideoCustom.swift */,
+			);
+			path = PlayerCell;
+			sourceTree = "<group>";
+		};
 		D7865AC32AC19FE10035543B = {
 			isa = PBXGroup;
 			children = (
@@ -67,8 +79,7 @@
 				D7865ACF2AC19FE10035543B /* AppDelegate.swift */,
 				D7865AD12AC19FE10035543B /* SceneDelegate.swift */,
 				D7865AE82AC19FFC0035543B /* Main.storyboard */,
-				D7865AE52AC19FFC0035543B /* PlayerViewCell.swift */,
-				D7865AE62AC19FFC0035543B /* PlayerViewCell.xib */,
+				D7777E3B2AE278550083B314 /* PlayerCell */,
 				D7865AE32AC19FFB0035543B /* VideoModel.swift */,
 				D7865AE42AC19FFB0035543B /* VideoURLData.json */,
 				D7865AE72AC19FFC0035543B /* ViewController.swift */,
@@ -153,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7865AED2AC19FFD0035543B /* ViewController.swift in Sources */,
+				D7777E3D2AE278630083B314 /* VideoCustom.swift in Sources */,
 				D7865AD02AC19FE10035543B /* AppDelegate.swift in Sources */,
 				D7865AE92AC19FFD0035543B /* VideoModel.swift in Sources */,
 				D7865AD22AC19FE10035543B /* SceneDelegate.swift in Sources */,
