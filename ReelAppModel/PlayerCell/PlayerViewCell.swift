@@ -18,6 +18,25 @@ class PlayerViewCell: UICollectionViewCell {
     @IBOutlet weak var imgStatusPlay: UIImageView!
     var timeObserver: Any?
     
+    //MARK: Collection use
+    public func configPlayer(model:VideoModel?){
+        if let haveModel = model{
+            if let urlString = haveModel.url, let videoURL = URL(string: String(format: "%@", urlString)) {
+                loadCoverImage(url: videoURL)
+                
+                let player = AVPlayer(url: videoURL)
+
+                if let viewPlayer = playerViewController{
+                    viewPlayer.player = player
+                    viewPlayer.player?.play()
+                    self.sliderBar.addTarget(self, action: #selector(onSliderValueChanged), for: .valueChanged)
+                    self.addTimeObserver()
+                    
+                }
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -43,6 +62,7 @@ class PlayerViewCell: UICollectionViewCell {
         )
     }
     
+    //MARK: Basic setupUI
     private func imageCoverSetup(){
         coverImageView.contentMode = .scaleAspectFill
     }
@@ -67,6 +87,7 @@ class PlayerViewCell: UICollectionViewCell {
         sliderBar.inputViewController?.viewDidLayoutSubviews()
     }
     
+    //MARK: Basic setupAction
     @objc func onSliderValueChanged(sender: UISlider) {
         if let viewPlayer = playerViewController{
             let time = CMTime(seconds: Double(sender.value), preferredTimescale: 600)
@@ -104,24 +125,6 @@ class PlayerViewCell: UICollectionViewCell {
         if let viewPlayer = playerViewController{
             viewPlayer.player?.seek(to: CMTime.zero)
             viewPlayer.player?.play()
-        }
-    }
-    
-    public func configPlayer(model:VideoModel?){
-        if let haveModel = model{
-            if let urlString = haveModel.url, let videoURL = URL(string: String(format: "%@", urlString)) {
-                loadCoverImage(url: videoURL)
-                
-                let player = AVPlayer(url: videoURL)
-
-                if let viewPlayer = playerViewController{
-                    viewPlayer.player = player
-                    viewPlayer.player?.play()
-                    self.sliderBar.addTarget(self, action: #selector(onSliderValueChanged), for: .valueChanged)
-                    self.addTimeObserver()
-                    
-                }
-            }
         }
     }
     

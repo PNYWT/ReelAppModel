@@ -7,11 +7,21 @@
 
 import UIKit
 
+enum TypeShow{
+    case AVController
+    case AVLayer
+}
+
 class ViewController: UIViewController {
 
+    @IBOutlet weak var btnShowAVControllerCell: UIButton!
+    @IBOutlet weak var btnShowAVLayerCell: UIButton!
     @IBOutlet weak var cltvVideo: UICollectionView!
     private var dataVideo:[VideoModel] = []
     private let reuseIdentifierCltvVideo = "PlayerCell"
+    private let reuseIdentifierCltvVideoLayer = "PlayerLayerCell"
+    
+    private var typeShow:TypeShow = .AVController
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +36,19 @@ class ViewController: UIViewController {
                 self.cltvVideo.reloadData()
             }
         }
+        
+        btnShowAVLayerCell.addTarget(self, action: #selector(actionShowAVLayerCell), for: .touchUpInside)
+        btnShowAVControllerCell.addTarget(self, action: #selector(actionShowAVControllerCell), for: .touchUpInside)
+    }
+    
+    @objc func actionShowAVLayerCell(){
+        typeShow = .AVLayer
+        cltvVideo.reloadData()
+    }
+    
+    @objc func actionShowAVControllerCell(){
+        typeShow = .AVController
+        cltvVideo.reloadData()
     }
     
     private func configCltv(){
@@ -40,6 +63,7 @@ class ViewController: UIViewController {
         cltvVideo.delegate = self
         cltvVideo.dataSource = self
         cltvVideo.register(UINib(nibName: "PlayerViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifierCltvVideo)
+        cltvVideo.register(UINib(nibName: "PlayerLayerViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifierCltvVideoLayer)
         cltvVideo.isPagingEnabled = true
         cltvVideo.isDirectionalLockEnabled = true
     }
@@ -71,9 +95,16 @@ extension ViewController:UICollectionViewDelegate, UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierCltvVideo, for: indexPath) as! PlayerViewCell
-        cell.configPlayer(model: self.dataVideo[indexPath.row])
-        return cell
+        switch typeShow{
+        case .AVController:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierCltvVideo, for: indexPath) as! PlayerViewCell
+            cell.configPlayer(model: self.dataVideo[indexPath.row])
+            return cell
+        case .AVLayer:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierCltvVideo, for: indexPath) as! PlayerLayerViewCell
+//            cell.configPlayer(model: self.dataVideo[indexPath.row])
+            return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -83,15 +114,31 @@ extension ViewController:UICollectionViewDelegate, UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if let cell = cell as? PlayerViewCell{
-            cell.playerPlay()
+        switch typeShow{
+        case .AVController:
+            if let cell = cell as? PlayerViewCell{
+                cell.playerPlay()
+            }
+            break
+        case .AVLayer:
+            if let cell = cell as? PlayerLayerViewCell{
+//                cell.playerPlay()
+            }
+            break
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let cell:PlayerViewCell = self.cltvVideo.cellForItem(at: indexPath) as? PlayerViewCell{
-            cell.didselectToPlayorStop()
+        switch typeShow{
+        case .AVController:
+            if let cell:PlayerViewCell = self.cltvVideo.cellForItem(at: indexPath) as? PlayerViewCell{
+                cell.didselectToPlayorStop()
+            }
+            break
+        case .AVLayer:
+            break
         }
+       
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

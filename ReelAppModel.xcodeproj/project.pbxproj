@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D7777E3D2AE278630083B314 /* VideoCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7777E3C2AE278630083B314 /* VideoCustom.swift */; };
+		D7777E402AE28C980083B314 /* PlayerLayerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7777E3E2AE28C980083B314 /* PlayerLayerViewCell.swift */; };
+		D7777E412AE28C980083B314 /* PlayerLayerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7777E3F2AE28C980083B314 /* PlayerLayerViewCell.xib */; };
 		D7865AD02AC19FE10035543B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7865ACF2AC19FE10035543B /* AppDelegate.swift */; };
 		D7865AD22AC19FE10035543B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7865AD12AC19FE10035543B /* SceneDelegate.swift */; };
 		D7865AD92AC19FE20035543B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7865AD82AC19FE20035543B /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		D7777E3C2AE278630083B314 /* VideoCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCustom.swift; sourceTree = "<group>"; };
+		D7777E3E2AE28C980083B314 /* PlayerLayerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerLayerViewCell.swift; sourceTree = "<group>"; };
+		D7777E3F2AE28C980083B314 /* PlayerLayerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerLayerViewCell.xib; sourceTree = "<group>"; };
 		D7865ACC2AC19FE10035543B /* ReelAppModel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReelAppModel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7865ACF2AC19FE10035543B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7865AD12AC19FE10035543B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +57,8 @@
 				D7865AE52AC19FFC0035543B /* PlayerViewCell.swift */,
 				D7865AE62AC19FFC0035543B /* PlayerViewCell.xib */,
 				D7777E3C2AE278630083B314 /* VideoCustom.swift */,
+				D7777E3E2AE28C980083B314 /* PlayerLayerViewCell.swift */,
+				D7777E3F2AE28C980083B314 /* PlayerLayerViewCell.xib */,
 			);
 			path = PlayerCell;
 			sourceTree = "<group>";
@@ -153,6 +159,7 @@
 				D7865ADC2AC19FE20035543B /* LaunchScreen.storyboard in Resources */,
 				D7865AD92AC19FE20035543B /* Assets.xcassets in Resources */,
 				D7865AEC2AC19FFD0035543B /* PlayerViewCell.xib in Resources */,
+				D7777E412AE28C980083B314 /* PlayerLayerViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +175,7 @@
 				D7865AD02AC19FE10035543B /* AppDelegate.swift in Sources */,
 				D7865AE92AC19FFD0035543B /* VideoModel.swift in Sources */,
 				D7865AD22AC19FE10035543B /* SceneDelegate.swift in Sources */,
+				D7777E402AE28C980083B314 /* PlayerLayerViewCell.swift in Sources */,
 				D7865AEB2AC19FFD0035543B /* PlayerViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

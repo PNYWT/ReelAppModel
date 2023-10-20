@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TikTokModelApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ReelAppModel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,17 +37,58 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="863-LK-m5O">
+                                <rect key="frame" x="0.0" y="67" width="393" height="28"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4f6-Re-VEq">
+                                        <rect key="frame" x="0.0" y="0.0" width="196.66666666666666" height="28"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content=" AVPlayerViewController">
+                                                    <attributes>
+                                                        <font key="NSFont" size="12" name="Helvetica"/>
+                                                        <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7H-ld-i67">
+                                        <rect key="frame" x="196.66666666666663" y="0.0" width="196.33333333333337" height="28"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="AVPlayerLayer">
+                                                    <attributes>
+                                                        <font key="NSFont" size="12" name="Helvetica"/>
+                                                        <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="863-LK-m5O" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4fQ-Hf-5hv"/>
                             <constraint firstAttribute="bottom" secondItem="FR5-Kg-PhI" secondAttribute="bottom" id="61o-ab-TnW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FR5-Kg-PhI" secondAttribute="trailing" id="83k-k9-6Kd"/>
                             <constraint firstItem="FR5-Kg-PhI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CDh-FW-4W8"/>
+                            <constraint firstItem="863-LK-m5O" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="Czp-6y-hqd"/>
                             <constraint firstItem="FR5-Kg-PhI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Z1y-ae-gSm"/>
+                            <constraint firstAttribute="trailing" secondItem="863-LK-m5O" secondAttribute="trailing" id="iyA-Zl-0gc"/>
+                            <constraint firstItem="863-LK-m5O" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vX6-A7-vhK"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnShowAVControllerCell" destination="4f6-Re-VEq" id="pxL-kz-T5E"/>
+                        <outlet property="btnShowAVLayerCell" destination="d7H-ld-i67" id="zZe-A2-UCC"/>
                         <outlet property="cltvVideo" destination="FR5-Kg-PhI" id="Ahc-Ms-o7z"/>
                     </connections>
                 </viewController>
